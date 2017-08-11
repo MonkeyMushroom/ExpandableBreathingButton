@@ -10,7 +10,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -218,11 +217,6 @@ public class ExpandableBreathingButton extends View {
     private void openButton() {
         isAniming = true;
         isOpen = true;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            mBreatheAnim.pause();
-        } else {
-            mBreatheAnim.cancel();
-        }
         AnimatorSet openAnimSet = new AnimatorSet();
         ValueAnimator rectLeftAnim = ValueAnimator.ofInt(mBackgroundRectFLeft, mArcWidth / 2);
         rectLeftAnim.setDuration(250);
@@ -269,11 +263,6 @@ public class ExpandableBreathingButton extends View {
             @Override
             public void onAnimationEnd(Animator animation) {
                 isAniming = false;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                    mBreatheAnim.resume();
-                } else {
-                    mBreatheAnim.start();
-                }
             }
         });
         closeAnimSet.start();
