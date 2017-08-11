@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="ExpandableBreathingButton">
+        <attr name="ebbButtonText" format="string" />
+        <attr name="ebbButtonTextSize" format="dimension" />
+        <attr name="ebbButtonTextColor" format="color" />
+        <attr name="ebbItemTextSize" format="dimension" />
+        <attr name="ebbItemTextColor" format="color" />
+        <attr name="ebbInnerCircleColor" format="color" />
+        <attr name="ebbRectBackgroundColor" format="color" />
+    </declare-styleable>
+
+</resources>
